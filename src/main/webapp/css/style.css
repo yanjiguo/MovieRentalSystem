@@ -1,0 +1,29 @@
+body{
+    background: url("../image/2.jpg") no-repeat;
+    background-size: cover; 
+}
+#hr{
+    width: 600px;
+    margin-left: -150px;
+    background-color: #eee;
+    margin-top: -5px;
+}
+#form-title{
+    margin-left: -130px;
+    font-size: 17px;
+}
+#btn{
+    margin-left:-55px; 
+    width: 60px;
+    height: 30px;
+}
+#submit{
+    background-color: #73B2FB;
+    border: none;
+}
+.form{
+    background: rgba(255,255,255,255);
+    width:600px;
+    height: 200px;
+    margin:120px auto;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    <!--扫描controller包-->
+    <context:component-scan base-package="com.yjg.controller"></context:component-scan>
+    <!--定义控制器编写方式，为注解方式-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--处理静态资源的格式,为servlet默认处理方式-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+    <!--配置视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--jsp文件所在的位置-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <!--jsp文件的后缀名-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--文件上传 commons-io和commons-fileuplode-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--设置编码-->
+        <property name="defaultEncoding" value="utf-8"></property>
+        <!--最大内存大小-->
+        <property name="maxInMemorySize" value="5242880"></property>
+        <!--最大文件大小，其中-1为不限制文件的大小-->
+        <property name="maxUploadSize" value="-1"></property>
+    </bean>
+</beans>
